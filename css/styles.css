@@ -10,9 +10,16 @@ h1 {
 	padding-top: 35px;
 }
 
-.iconbutton {
+.btn {
 
+	margin-left: 7px;
+}
+
+.iconbutton {
+	
 	float: right;
+	padding-bottom: 0px;
 	color: black;
 
 }
+

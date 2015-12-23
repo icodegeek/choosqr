@@ -14,9 +14,13 @@
 				<h1>Choosqr</h1>
 				<form action="?publish" method="post" role="form">
 					<div class="row">
+					<div class="col-lg-12">
 						<div class="form-group">
 							<textarea name="message" class="form-control" cols="25" rows="5"></textarea>
 						</div>
+					</div>
+					</div>
+					<div class="row">
 						<div class="col-lg-10">
 							<div class="form-group">
 								<input type="text" class="form-control" name="user" placeholder="Nombre de usuario">
@@ -29,11 +33,19 @@
 				<div class="row">
 					<div class="col-lg-10">
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam expedita, quidem tempore ullam nesciunt sunt, enim necessitatibus officiis dolorem quod reiciendis molestias nobis nemo vero commodi velit at mollitia fuga!</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-10 author">
 						<small>por <strong>UsuarioX</strong></small>
+					</div>
+					<div class="col-lg-1 col-lg-offset-10">
 						<form action="?edit" method="post" role="form">
 							<input type="hidden" name="idsms" value="">
 							<button type="submit" class="btn btn-link btn-sm iconbutton"><i class="glyphicon glyphicon-pencil"></i></button>
 						</form>
+					</div>
+					<div class="col-lg-1">
 						<form action="?delete" method="post" role="form">
 							<input type="hidden" name="idsms" value="">
 							<button type="submit" class="btn btn-link btn-sm iconbutton"><i class="glyphicon glyphicon-trash"></i></button>
