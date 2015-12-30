@@ -6,8 +6,12 @@ h1 {
 	font-family: 'Pacifico', cursive;
 	text-align: center;
 	font-size: 50px;
-	padding-bottom: 25px;
-	padding-top: 35px;
+	padding: 25px 0px 30px;
+}
+
+h5 {
+
+	text-align: center;
 }
 
 p {
@@ -28,3 +32,9 @@ p {
 
 }
 
+footer {
+	
+	margin: 25px 0px 30px;
+	text-align: center;
+	
+}

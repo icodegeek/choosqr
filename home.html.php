@@ -20,20 +20,11 @@
 
  ?>
 
-<!DOCTYPE html>
-<html lang="es">
-<head>
-	<meta charset="UTF-8">
-	<title>Bienvenido a Choosqr</title>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.css">
-	<link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-6 col-lg-offset-3">
-				<h1>Choosqr</h1>
+<?php 
+	
+	require_once $base_path.'templates/header.php';
+?>
+				
 				<form action="?publish" method="post" role="form">
 					<div class="row">
 					<div class="col-lg-12">
@@ -72,14 +63,14 @@
 									<small>por: <strong><?=$mensaje['autor']?></strong></small>
 								</div>
 								<div class="col-lg-1 col-lg-offset-10">
-									<form action="?edit" method="post" role="form">
-										<input type="hidden" name="idsms" value="">
+									<form action="<?=$home?>edit/" method="post" role="form">
+										<input type="hidden" name="idsms" value="<?=$mensaje['id']?>">
 										<button type="submit" class="btn btn-link btn-sm iconbutton"><i class="glyphicon glyphicon-pencil"></i></button>
 									</form>
 								</div>
 								<div class="col-lg-1">
 									<form action="?delete" method="post" role="form">
-										<input type="hidden" name="idsms" value="">
+										<input type="hidden" name="idsms" value="<?=$mensaje['id']?>">
 										<button type="submit" class="btn btn-link btn-sm iconbutton"><i class="glyphicon glyphicon-trash"></i></button>
 									</form>
 								</div>
@@ -90,9 +81,7 @@
 						<h3>No existe ningún mensaje en la plataforma.</h3>
 					<?php endif ?>
 					</div>
-				</div>	
-			</div>
-		</div>
-	</div>
-</body>
-</html>
+				</div>
+
+<?php 
+	require_once $base_path . 'templates/footer.php';
