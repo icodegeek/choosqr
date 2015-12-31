@@ -49,7 +49,7 @@
 								<?php endif; ?>
 							</div>
 						</div>
-						<button type="submit" class="btn btn-primary">Publicar</button>
+						<button type="submit" class="btn btn-primary btnpublish">Publicar</button>
 					</div>
 				</form>
 				<hr>
