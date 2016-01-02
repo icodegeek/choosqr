@@ -20,6 +20,8 @@
 
  ?>
 
+ <!-- HEADER -->
+
 <?php 
 	
 	require_once $base_path.'templates/header.php';
@@ -30,13 +32,13 @@
 					<div class="col-lg-12">
 						<div class="form-group <?=$errores_texto?>">
 							<textarea name="message" class="form-control" cols="25" rows="5"><?php if(isset($texto))echo$texto;?></textarea>
+							<?php if (!empty($errores['texto']['vacio'])): ?>
+								<p class="help-block">Por favor, introduzca un mensaje.</p><br>
+							<?php endif; ?>
+							<?php if (!empty($errores['texto']['longitud'])): ?>
+								<p class="help-block">El mensaje no debe ser superior a 140 caracteres.</p><br>
+							<?php endif; ?>
 						</div>
-						<?php if (!empty($errores['texto']['vacio'])): ?>
-							<p class="help-block">Por favor, introduzca un mensaje.</p><br>
-						<?php endif; ?>
-						<?php if (!empty($errores['texto']['longitud'])): ?>
-							<p class="help-block">El mensaje no debe ser superior a 140 caracteres.</p><br>
-						<?php endif; ?>
 					</div>
 					</div>
 					<div class="row">
@@ -44,7 +46,6 @@
 							<div class="form-group <?=$errores_usuario?>">
 								<input type="text" class="form-control" name="user" placeholder="Nombre de usuario"  value="<?php echo (isset($usuario))?$usuario:'';?>">
 								<?php if (!empty($errores['usuario']['longitud'])): ?>
-									<br>
 									<p class="help-block">El nombre de usuario debe tener al menos 3 caracteres.</p>
 								<?php endif; ?>
 							</div>
@@ -82,6 +83,8 @@
 					<?php endif ?>
 					</div>
 				</div>
+
+	<!-- FOOTER -->
 
 <?php 
 	require_once $base_path . 'templates/footer.php';

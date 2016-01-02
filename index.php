@@ -65,7 +65,7 @@ if (isset($_GET['publish'])) {
 
 		} catch (PDOException $e) {
 			
-			die("No se ha podido guardar la tarea en la base de datos:". $e->getMessage());
+			die("No se ha podido guardar el mensaje en la base de datos:". $e->getMessage());
 		}
 
 		header("Location: .");
@@ -77,6 +77,32 @@ if (isset($_GET['publish'])) {
 		exit();
 	}
 
+}
+
+//Borrar mensaje
+
+if (isset($_GET['delete'])) {
+	
+	$id = htmlspecialchars($_POST['idsms'], ENT_QUOTES, 'UTF-8');
+
+	if(is_numeric($id)){
+
+		try {
+
+			$sql = "DELETE FROM tb_messages WHERE id = :id";
+			$ps = $pdo->prepare($sql);
+			$ps->bindValue(':id', $id);
+			$ps->execute();
+			
+		} catch (PDOException $e) {
+			
+			die('No se ha podido borrar el mensaje debido a un error: ' . $e->getMessage());
+		}
+
+	}
+
+	header('Location: .');
+	exit();
 }
 
 require_once 'home.html.php';
