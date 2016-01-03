@@ -3,6 +3,8 @@
 require_once 'location/url.php';
 require_once $base_path.'db/connectdb.php';
 
+session_start();
+
 //Muestro mensaje y usuario que existe en la base de datos
 
 try {
@@ -103,6 +105,18 @@ if (isset($_GET['delete'])) {
 
 	header('Location: .');
 	exit();
+}
+
+// Realizar logout en la página
+
+if (isset($_GET['logout'])) {
+	 
+	 unset($_SESSION['user']);
+
+	 session_destroy();
+
+	 header('Location: ' . $home .'login');
+
 }
 
 require_once 'home.html.php';

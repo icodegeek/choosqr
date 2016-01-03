@@ -3,6 +3,8 @@
 require_once '../location/url.php';
 require_once $base_path.'db/connectdb.php';
 
+session_start();
+
 //Muestro información de cada mensaje según su id
 
 if (isset($_POST['idsms'])) {
